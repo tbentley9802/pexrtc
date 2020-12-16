@@ -33,7 +33,7 @@ window.onload = function()
 
     var is_explorer = navigator.userAgent.indexOf('MSIE') > -1 || navigator.userAgent.indexOf('Trident') > -1;
 
-    var id_form = document.getElementById('id_form');
+    var id_form = document.getElementById('proxy');
     if (is_explorer || (safari_ver > 0 && safari_ver < 604)) {
         id_form.action = "conference-flash.html";
     }   
@@ -79,10 +79,10 @@ window.onload = function()
   <div id="maincontent" class="main site join">
     <form id="id_form" action="conference.html" method="get">
         <label for="id_alias" class="vh">Enter the conference alias</label>
-        <input type="text" value="" name="alias" id="id_alias" placeholder="Enter the conference alias" required class="webrtcinput">
+        <input type="hidden" value="" name="alias" id="id_alias" placeholder="Enter the conference alias"  class="webrtcinput">
 
         <label for="id_name" class="vh">Enter your name</label>
-        <input type="text" value="" name="name" id="id_name" placeholder="Enter your name" required class="webrtcinput">
+        <input type="text" value="" name="name" id="id_name" placeholder="Enter your name"  class="webrtcinput">
 
         <select name="bandwidth" class="webrtcinput" id="id_bandwidth">
             <option value="4092" selected>Maximum Bandwidth (4092kbps)</option>
@@ -91,7 +91,7 @@ window.onload = function()
             <option value="1024">Low Bandwidth (1024kbps)</option>
         </select>
 
-        <input type="submit" value="Join Conference" name="join" id="id_join" class="webrtcbutton">
+        <input type="submit" value="Join Conference" name="proxy" id="id_join" class="webrtcbutton">
         <input type="submit" value="Present Screen Only" name="join_pres" id="id_join_pres" class="webrtcbutton">
     </form>
   </div>
